@@ -1,0 +1,26 @@
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();
+
+        int[] salaries = new int[N];
+
+        for (int i = 0; i < N; i++) {
+            salaries[i] = sc.nextInt();
+        }
+
+        int[] updated = Arrays.stream(salaries)
+                              .map(salary -> salary + (salary * 10 / 100))
+                              .toArray();
+
+        for (int salary : updated) {
+            System.out.print(salary + " ");
+        }
+
+        sc.close();
+    }
+}
